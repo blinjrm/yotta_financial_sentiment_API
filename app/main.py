@@ -13,11 +13,8 @@ class Message(BaseModel):
 app = FastAPI()
 sentiment = Sentiment()
 
-# origins = ["http://localhost", "http://localhost:3000", "http://127.0.0.1:3000"]
-
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=origins,
     allow_credentials=True,
     allow_methods=["POST"],
     allow_headers=["*"],

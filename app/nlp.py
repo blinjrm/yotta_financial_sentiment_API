@@ -1,18 +1,7 @@
-"""[summary]
-"""
-
-# from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
 from transformers import RobertaForSequenceClassification, RobertaTokenizer, pipeline
 
 
 class Sentiment:
-    """[summary]
-
-    Returns
-    -------
-    [type]
-        [description]
-    """
 
     MODEL_NAME = "blinjrm/finsent"
 

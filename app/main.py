@@ -5,9 +5,9 @@ from pydantic import BaseModel
 from app.nlp import Sentiment
 
 
-class Message(BaseModel):
+class Headline(BaseModel):
     input: str
-    output: str = ""  # None
+    output: str = None
 
 
 app = FastAPI()
@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 
-@app.post("/sentiment/")
-async def sentiment_analysis(message: Message):
-    message.output = str(sentiment.analyze(message.input))
-    return {"output": message.output}
+@app.post("/")
+def sentiment_analysis(headline: Headline):
+    headline.output = str(sentiment.analyze(headline.input))
+    return headline.output

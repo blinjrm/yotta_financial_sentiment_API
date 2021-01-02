@@ -14,4 +14,5 @@ class Sentiment:
 
     def analyze(self, headline: str):
         result = self.classifier(headline)[0]
-        return f"label: {result['label']}, with score: {round(result['score'], 4)}"
+        # return f"label: {result['label']}, score: {round(result['score'], 4)}"
+        return {"label": result["label"], "score": round(result["score"], 4)}
